@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24f163bd9e1b0a24d99b6bf2a591cf07, type: 3}
   m_Name: Task1
   m_EditorClassIdentifier: 
-  item: {fileID: 0}
-  amount: 0
+  item: {fileID: 11400000, guid: 4f062b4a7b5d6c6408f33294d87f4e85, type: 2}
+  desiredAmount: 0
+  completed: 0
