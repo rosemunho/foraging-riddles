@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     Quaternion m_Rotation = Quaternion.identity;
 
     public float turnSpeed = 20f;
+    public float walkSpeed = 1f;
 
     // Start is called before the first frame update
     void Start()
@@ -40,7 +41,7 @@ public class PlayerMovement : MonoBehaviour
 
     void OnAnimatorMove()
     {
-        m_Rigidbody.MovePosition(m_Rigidbody.position + m_Movement * m_Animator.deltaPosition.magnitude);
+        m_Rigidbody.MovePosition(m_Rigidbody.position + m_Movement * m_Animator.deltaPosition.magnitude * walkSpeed);
         m_Rigidbody.MoveRotation(m_Rotation);
     }
 }
