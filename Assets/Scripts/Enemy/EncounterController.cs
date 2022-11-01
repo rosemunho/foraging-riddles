@@ -18,6 +18,7 @@ public class EncounterController : MonoBehaviour
             {
                 // trigger attack dialog
                 enemy.currentOdds = 0;
+                break;
             }
             else
             {
