@@ -6,5 +6,5 @@ using UnityEngine;
 public class Riddle : ScriptableObject
 {
     public string question = "";
-    public string  answer = "";
+    public string answer = "";
 }

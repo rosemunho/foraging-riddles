@@ -7,8 +7,9 @@ public class DayCicle : MonoBehaviour
 {
     // In Minutes
     public int realTimeDuration = 15;
-    public int dayDuration = 12 * 60; // 12 hours
-    public int startHour = 6 * 60; // 6h
+    // In Hours
+    public int dayDuration = 12;
+    public int startHour = 6;
 
     private DateTime timeStarted;
     private DateTime currentTime;
@@ -46,20 +47,21 @@ public class DayCicle : MonoBehaviour
         {
             int elapsedTime = (currentTime.Hour*60 + currentTime.Minute) - (timeStarted.Hour*60 + timeStarted.Minute) - previousPauseDuration;
             UpdateClock(elapsedTime);
+            //TOOO: check enemy encounters
         }
     }
 
     public void UpdateClock(int elapsedTime)
     {
         float dayCompletion = elapsedTime / realTimeDuration;
-        float gameDayCompletion = dayCompletion * dayDuration;
+        float gameDayCompletion = dayCompletion * (dayDuration*60);
 
         if(Mathf.Approximately(gameDayCompletion, 1f))
         {
             EndDay();
         }
 
-        int currentGameTime = startHour + (int)Math.Floor(gameDayCompletion);
+        int currentGameTime = (startHour*60) + (int)Math.Floor(gameDayCompletion);
 
         int hours = currentGameTime / 60;
         currentGameTime -= hours * 60;
@@ -72,5 +74,6 @@ public class DayCicle : MonoBehaviour
         isRunning = false;
         isPaused = false;
         //TODO: Trigger Check Tasks
+
     }
 }
