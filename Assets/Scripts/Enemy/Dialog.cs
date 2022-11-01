@@ -8,13 +8,15 @@ public class Dialog : MonoBehaviour
     public Riddle riddle;
     public Riddle[] dummyRiddles;
 
-    // label for the other thing
+    //TODO: label for the other thing
     public Button[] buttons;
 
-    //public void ChooseRiddles() {}
+    //TODO: public void ChooseRiddles() {}
 
     public void SetOptions()
     {
+        //TODO: complete
+
         // set label text = riddle.question or riddle.answer
 
         Shuffle();

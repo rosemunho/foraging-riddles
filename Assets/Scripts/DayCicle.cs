@@ -14,17 +14,37 @@ public class DayCicle : MonoBehaviour
     private DateTime currentTime;
     private bool isRunning = false;
 
+    private DateTime pauseStarted;
+    private int previousPauseDuration = 0;
+    private bool isPaused = false;
+
     public void StartDay()
     {
         timeStarted = DateTime.Now;
         isRunning = true;
+        isPaused = false;
+    }
+
+    public void TogglePauseDay(bool pause)
+    {
+        isPaused = pause;
+        if(pause)
+        {
+            pauseStarted = DateTime.Now;
+        }
+        else
+        {
+            int elapsedTime = (currentTime.Hour*60 + currentTime.Minute) - (pauseStarted.Hour*60 + pauseStarted.Minute);
+            previousPauseDuration += elapsedTime;
+        }
     }
 
     void Update()
     {
-        if(isRunning)
+        currentTime = DateTime.Now;
+        if(isRunning && !isPaused)
         {
-            int elapsedTime = (currentTime.Hour*60 + currentTime.Minute) - (timeStarted.Hour*60 + timeStarted.Minute);
+            int elapsedTime = (currentTime.Hour*60 + currentTime.Minute) - (timeStarted.Hour*60 + timeStarted.Minute) - previousPauseDuration;
             UpdateClock(elapsedTime);
         }
     }
@@ -44,12 +64,13 @@ public class DayCicle : MonoBehaviour
         int hours = currentGameTime / 60;
         currentGameTime -= hours * 60;
         int minutes = currentGameTime;
-        // set the Ui stuff
+        //TODO: set the Ui stuff
     }
 
     public void EndDay()
     {
         isRunning = false;
-        // Trigger Check Tasks
+        isPaused = false;
+        //TODO: Trigger Check Tasks
     }
 }
