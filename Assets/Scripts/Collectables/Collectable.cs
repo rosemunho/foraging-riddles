@@ -6,11 +6,24 @@ public class Collectable : MonoBehaviour
 {
     public Inventory inventory;
     public InventoryItem item;
+    private bool canCollect = false;
 
     void Update()
     {
-        //if mouse clicked
-        //  inventory.AddItem(item);
-        //  destroy self
+        if(canCollect && Input.GetMouseButtonUp(0))
+        {
+            inventory.AddItem(item);
+            Destroy(gameObject);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        canCollect = true;
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        canCollect = false;
     }
 }

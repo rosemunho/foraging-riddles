@@ -17,6 +17,7 @@ public class CollectableSpawner : MonoBehaviour
             Vector2 offset = GenerateRandomPositionOffset();
             Vector3 position = gameObject.transform.position + new Vector3(offset.x, 0, offset.y);
             GameObject collectable = Instantiate(collectablePrefab, position, Quaternion.identity, parent.transform);
+            collectable.SetActive(true);
         }
     }
 

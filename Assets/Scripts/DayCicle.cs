@@ -13,7 +13,7 @@ public class DayCicle : MonoBehaviour
 
     private DateTime timeStarted;
     private DateTime currentTime;
-    private bool isRunning = false;
+    private bool dayHasStarted = false;
 
     private DateTime pauseStarted;
     private int previousPauseDuration = 0;
@@ -22,7 +22,7 @@ public class DayCicle : MonoBehaviour
     public void StartDay()
     {
         timeStarted = DateTime.Now;
-        isRunning = true;
+        dayHasStarted = true;
         isPaused = false;
     }
 
@@ -43,7 +43,7 @@ public class DayCicle : MonoBehaviour
     void Update()
     {
         currentTime = DateTime.Now;
-        if(isRunning && !isPaused)
+        if(dayHasStarted && !isPaused)
         {
             int elapsedTime = (currentTime.Hour*60 + currentTime.Minute) - (timeStarted.Hour*60 + timeStarted.Minute) - previousPauseDuration;
             UpdateClock(elapsedTime);
@@ -71,7 +71,7 @@ public class DayCicle : MonoBehaviour
 
     public void EndDay()
     {
-        isRunning = false;
+        dayHasStarted = false;
         isPaused = false;
         //TODO: Trigger Check Tasks
 
