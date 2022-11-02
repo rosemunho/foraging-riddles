@@ -8,12 +8,16 @@ public class Collectable : MonoBehaviour
     public InventoryItem item;
     private bool canCollect = false;
 
+    //TODO: remove from here, you know the drill
+    public Animator playerAnimator;
+
     void Update()
     {
-        if(canCollect && Input.GetMouseButtonUp(0))
+        if(canCollect && Input.GetMouseButtonUp(0) && !playerAnimator.GetBool("IsWalking"))
         {
             inventory.AddItem(item);
             Destroy(gameObject);
+            playerAnimator.SetTrigger("GrabItem");
         }
     }
 
