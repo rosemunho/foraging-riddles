@@ -5,7 +5,7 @@ using UnityEngine;
 public class Collectable : MonoBehaviour
 {
     public Inventory inventory;
-    public InventoryItem item;
+    public Item item;
     private bool canCollect = false;
 
     //TODO: remove from here, you know the drill
@@ -15,7 +15,7 @@ public class Collectable : MonoBehaviour
     {
         if(canCollect && Input.GetMouseButtonUp(0) && !playerAnimator.GetBool("IsWalking"))
         {
-            inventory.AddItem(item);
+            inventory.CollectItem(item);
             Destroy(gameObject);
             playerAnimator.SetTrigger("GrabItem");
         }

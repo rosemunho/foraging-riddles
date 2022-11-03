@@ -4,16 +4,30 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    //public InventoryItem[] items = null;
-    /*
-    public void CollectItem(InventoryItem item)
+    public InventoryItem[] items = null;
+    
+    public void CollectItem(Item item)
     {
-        item.Add();
+        foreach(InventoryItem ii in items)
+        {
+            if(ii.item.itemName == item.itemName)
+            {
+                ii.Add();
+                break;
+            }
+        }
     }
     
-    public void UseItem(InventoryItem item)
+    public void UseItem(Item item)
     {
-        item.Remove();
+        foreach(InventoryItem ii in items)
+        {
+            if(ii.item.itemName == item.itemName)
+            {
+                ii.Remove();
+                break;
+            }
+        }
     }
-    */
+    
 }
