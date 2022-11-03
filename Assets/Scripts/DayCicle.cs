@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DayCicle : MonoBehaviour
 {
@@ -19,11 +20,19 @@ public class DayCicle : MonoBehaviour
     private int previousPauseDuration = 0;
     private bool isPaused = false;
 
+    public Text time;
+
+    void Start()
+    {
+        StartDay();
+    }
+
     public void StartDay()
     {
         timeStarted = DateTime.Now;
         dayHasStarted = true;
         isPaused = false;
+        previousPauseDuration = 0;
     }
 
     public void TogglePauseDay(bool pause)
@@ -35,7 +44,7 @@ public class DayCicle : MonoBehaviour
         }
         else
         {
-            int elapsedTime = (currentTime.Hour*60 + currentTime.Minute) - (pauseStarted.Hour*60 + pauseStarted.Minute);
+            int elapsedTime = (currentTime.Hour*360 + currentTime.Minute*60 + currentTime.Second) - (pauseStarted.Hour*360 + pauseStarted.Minute*60 + pauseStarted.Second);
             previousPauseDuration += elapsedTime;
         }
     }
@@ -45,18 +54,24 @@ public class DayCicle : MonoBehaviour
         currentTime = DateTime.Now;
         if(dayHasStarted && !isPaused)
         {
-            int elapsedTime = (currentTime.Hour*60 + currentTime.Minute) - (timeStarted.Hour*60 + timeStarted.Minute) - previousPauseDuration;
+            float elapsedTime = (currentTime.Hour*360 + currentTime.Minute*60 + currentTime.Second) - (timeStarted.Hour*360 + timeStarted.Minute*60 + timeStarted.Second) - previousPauseDuration;
+            Debug.Log(elapsedTime);
             UpdateClock(elapsedTime);
             //TOOO: check enemy encounters
         }
+        
+        if(Input.GetMouseButtonUp(1))
+        {
+            TogglePauseDay(!isPaused);
+        }
     }
 
-    public void UpdateClock(int elapsedTime)
+    public void UpdateClock(float elapsedTime)
     {
-        float dayCompletion = elapsedTime / realTimeDuration;
+        float dayCompletion = elapsedTime / (realTimeDuration*60);
         float gameDayCompletion = dayCompletion * (dayDuration*60);
 
-        if(Mathf.Approximately(gameDayCompletion, 1f))
+        if(Mathf.Approximately(dayCompletion, 1f))
         {
             EndDay();
         }
@@ -66,7 +81,7 @@ public class DayCicle : MonoBehaviour
         int hours = currentGameTime / 60;
         currentGameTime -= hours * 60;
         int minutes = currentGameTime;
-        //TODO: set the Ui stuff
+        time.text = hours.ToString() + ":" + minutes.ToString();
     }
 
     public void EndDay()
@@ -74,6 +89,5 @@ public class DayCicle : MonoBehaviour
         dayHasStarted = false;
         isPaused = false;
         //TODO: Trigger Check Tasks
-
     }
 }
