@@ -6,15 +6,15 @@ using UnityEngine.UI;
 public class InventoryItem : MonoBehaviour
 {
     public Item item;
-    public Image sprite;
+    public Image image;
     public Text text;
 
     void Start()
     {
         if(item.icon != null)
         {
-            //sprite = item.icon;
-            // add slight fade
+            image.sprite = item.icon;
+            image.color = new Color(1, 1, 1, 0.5f);
         }
         text.gameObject.SetActive(false);
     }
@@ -23,7 +23,7 @@ public class InventoryItem : MonoBehaviour
     {
         if(item.amount == 0)
         {
-            //remove fade    
+            image.color = new Color(1, 1, 1, 1);
             text.text = "";
             text.gameObject.SetActive(true);
         }
@@ -39,7 +39,7 @@ public class InventoryItem : MonoBehaviour
         }
         else if(item.amount == 1)
         {
-            // fade sprite
+            image.color = new Color(1, 1, 1, 0.5f);
             text.gameObject.SetActive(false);
         }
         item.amount--;
