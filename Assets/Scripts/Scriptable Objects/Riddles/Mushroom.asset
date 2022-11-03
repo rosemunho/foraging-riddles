@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 13501fdef52c7c34e9ac075ac6d8a188, type: 3}
-  m_Name: Riddle1
+  m_Name: Mushroom
   m_EditorClassIdentifier: 
-  question: 
-  answer: 
+  question: 'What kind of room has no doors or windows?  '
+  answer: A mushroom.
