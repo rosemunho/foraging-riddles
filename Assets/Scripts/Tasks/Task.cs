@@ -9,8 +9,8 @@ public class Task : ScriptableObject
     public int desiredAmount;
     public bool completed = false;
 
-    public bool CheckComplete()
+    public void CheckComplete()
     {
-        return desiredAmount < item.amount;
+        completed = desiredAmount < item.amount;
     }
 }

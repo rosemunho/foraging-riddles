@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Task1
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 4f062b4a7b5d6c6408f33294d87f4e85, type: 2}
-  desiredAmount: 0
+  desiredAmount: 5
   completed: 0

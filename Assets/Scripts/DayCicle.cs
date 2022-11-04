@@ -81,7 +81,7 @@ public class DayCicle : MonoBehaviour
         int hours = currentGameTime / 60;
         currentGameTime -= hours * 60;
         int minutes = currentGameTime;
-        time.text = hours.ToString() + ":" + minutes.ToString();
+        time.text = (hours < 10 ? "0" : "") + hours.ToString() + ":" + (minutes < 10 ? "0" : "") + minutes.ToString();
     }
 
     public void EndDay()

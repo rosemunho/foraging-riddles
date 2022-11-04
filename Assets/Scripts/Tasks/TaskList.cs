@@ -7,17 +7,31 @@ public class TaskList : MonoBehaviour
     public Task[] availableTasks = null;
     // Check how to rename the X and Y later
     public Vector2Int taskAmountLimits = Vector2Int.up;
+    public TaskListItem[] tasks;
 
-    private Task[] tasks = null;
+    void Start()
+    {
+        ChooseTasks();
+    }
 
     public void ChooseTasks()
     {                         
         ShuffleTasks(availableTasks);
+
+        taskAmountLimits.x = Mathf.Max(1, taskAmountLimits.x);
+        taskAmountLimits.y = Mathf.Min(tasks.Length, taskAmountLimits.y);
         int taskAmount = Random.Range(taskAmountLimits.x, taskAmountLimits.y);
-        tasks = new Task[taskAmount];
-        for(int i = 0; i < taskAmount; i++)
+
+        for(int i = 0; i < tasks.Length; i++)
         {
-            tasks[i] = availableTasks[i];
+            if(i < taskAmount)
+            {
+                tasks[i].UpdateTask(availableTasks[i]);
+            }
+            else
+            {
+                tasks[i].UpdateTask(null);
+            }
         }
     }
 
