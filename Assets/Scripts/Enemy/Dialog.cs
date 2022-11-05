@@ -5,40 +5,58 @@ using UnityEngine.UI;
 
 public class Dialog : MonoBehaviour
 {
-    public Riddle riddle;
-    public Riddle[] dummyRiddles;
+    public Riddle[] availableRiddles;
 
-    //TODO: label for the other thing
+    public Text prompt;
     public Button[] buttons;
+    public bool useQuestionPrompt = true;
 
-    //TODO: public void ChooseRiddles() {}
-
-    public void SetOptions()
+    void Start()
     {
-        //TODO: complete
+        ChooseRiddles();
+    }
 
-        // set label text = riddle.question or riddle.answer
-
-        Shuffle();
-
-        //buttons[0].text = riddle.answer or riddle.question
-        //set button behaviour
-        for(int i = 1; i < buttons.Length; i++)
+    public void ChooseRiddles()
+    {
+        Shuffle<Riddle>(availableRiddles);
+        Shuffle<Button>(buttons);
+        if (useQuestionPrompt)
         {
-            //buttons[i].text = dummyRiddles[i-1].answer or question
-            //set bad button behaviour
+            prompt.text = availableRiddles[0].question;
+        }
+        else
+        {
+            prompt.text = availableRiddles[0].answer;
+        }
+        for(int i = 0; i < buttons.Length; i++)
+        {
+            bool isCorrect = i == 0;
+            if (useQuestionPrompt)
+            {
+                buttons[i].GetComponent<Text>().text = availableRiddles[i].answer;
+            }
+            else
+            {
+                buttons[i].GetComponent<Text>().text = availableRiddles[i].question;
+            }
+            buttons[i].onClick.AddListener(() => ChooseOption(isCorrect));
         }
     }
 
-    public void Shuffle()
+    public static void Shuffle<T>(T[] array)
     {
-        Button tempButton;
-        for (int i = 0; i < buttons.Length - 1; i++) 
+        T temp;
+        for (int i = 0; i < array.Length - 1; i++) 
         {
-            int rnd = Random.Range(i, buttons.Length);
-            tempButton = buttons[rnd];
-            buttons[rnd] = buttons[i];
-            buttons[i] = tempButton;
+            int rnd = Random.Range(i, array.Length);
+            temp = array[rnd];
+            array[rnd] = array[i];
+            array[i] = temp;
         }
+    }
+
+    public void ChooseOption(bool isCorrect)
+    {
+        Debug.Log(isCorrect);
     }
 }
