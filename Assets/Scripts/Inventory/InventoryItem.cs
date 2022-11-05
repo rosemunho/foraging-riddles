@@ -9,16 +9,6 @@ public class InventoryItem : MonoBehaviour
     public Image image;
     public Text text;
 
-    void Start()
-    {
-        if(item.icon != null)
-        {
-            image.sprite = item.icon;
-            image.color = new Color(1, 1, 1, 0.5f);
-        }
-        text.gameObject.SetActive(false);
-    }
-
     public void Add()
     {
         if(item.amount == 0)
@@ -44,5 +34,16 @@ public class InventoryItem : MonoBehaviour
         }
         item.amount--;
         text.text = item.amount.ToString();
+    }
+
+    public void Reset()
+    {
+        item.amount = 0;
+        if(item.icon != null)
+        {
+            image.sprite = item.icon;
+            image.color = new Color(1, 1, 1, 0.5f);
+        }
+        text.gameObject.SetActive(false);
     }
 }

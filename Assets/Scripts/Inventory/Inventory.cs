@@ -30,4 +30,11 @@ public class Inventory : MonoBehaviour
         }
     }
     
+    public void Reset()
+    {
+        foreach(InventoryItem ii in items)
+        {
+            ii.Reset();
+        }
+    }
 }

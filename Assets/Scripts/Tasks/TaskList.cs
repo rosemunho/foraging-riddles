@@ -9,8 +9,9 @@ public class TaskList : MonoBehaviour
     public Vector2Int taskAmountLimits = Vector2Int.up;
     public TaskListItem[] tasks;
 
-    void Start()
+    public void UpdateTasks()
     {
+        //TODO: define tasks by level or choose randomly? maybe both??
         ChooseTasks();
     }
 

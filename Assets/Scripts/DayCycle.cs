@@ -4,8 +4,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DayCicle : MonoBehaviour
+public class DayCycle : MonoBehaviour
 {
+    public GameController gameController;
+
     // In Minutes
     public int realTimeDuration = 15;
     // In Hours
@@ -21,11 +23,6 @@ public class DayCicle : MonoBehaviour
     private bool isPaused = false;
 
     public Text time;
-
-    void Start()
-    {
-        StartDay();
-    }
 
     public void StartDay()
     {
@@ -55,9 +52,7 @@ public class DayCicle : MonoBehaviour
         if(dayHasStarted && !isPaused)
         {
             float elapsedTime = (currentTime.Hour*360 + currentTime.Minute*60 + currentTime.Second) - (timeStarted.Hour*360 + timeStarted.Minute*60 + timeStarted.Second) - previousPauseDuration;
-            Debug.Log(elapsedTime);
             UpdateClock(elapsedTime);
-            //TOOO: check enemy encounters
         }
         
         if(Input.GetMouseButtonUp(1))
@@ -74,6 +69,7 @@ public class DayCicle : MonoBehaviour
         if(Mathf.Approximately(dayCompletion, 1f))
         {
             EndDay();
+            gameController.EndDay();
         }
 
         int currentGameTime = (startHour*60) + (int)Math.Floor(gameDayCompletion);
