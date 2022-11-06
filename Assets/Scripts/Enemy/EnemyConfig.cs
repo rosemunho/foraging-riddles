@@ -6,9 +6,27 @@ using UnityEngine;
 public class EnemyConfig : ScriptableObject
 {
     public int[] oddsStep;
-    //TODO: trigger increment index from day cycle
     public int currentOddsIndex = 0;
-    // In Minutes
     public int checkInterval = 0;
     public int currentOdds = 0;
+
+    public void IncrementOdds()
+    {
+        int min = 0;
+        if(currentOddsIndex != 0)
+        {
+            min = oddsStep[currentOddsIndex-1];
+        }
+        int oddsIncrement = Random.Range(min, oddsStep[currentOddsIndex]);
+        currentOdds += oddsIncrement;
+    }
+
+    public void IncrementOddsIndex()
+    {
+        if(currentOddsIndex == oddsStep.Length - 1)
+        {
+            return;
+        }
+        currentOddsIndex++;
+    }
 }

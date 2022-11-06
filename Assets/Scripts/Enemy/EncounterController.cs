@@ -1,38 +1,41 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class EncounterController : MonoBehaviour
 {
-    public EnemyConfig[] availableEnemies;
+    public EnemyConfig enemy;
+    public GameController gameController;
+
+    private DateTime lastCheck;
 
     public void CheckForEncounter(int timeElapsed)
     {
-        foreach(EnemyConfig enemy in availableEnemies)
+        DateTime currentTime = DateTime.Now;
+        if((lastCheck.Hour == currentTime.Hour && lastCheck.Minute == currentTime.Minute && lastCheck.Second == currentTime.Second)
+            || timeElapsed % enemy.checkInterval != 0)
         {
-            if(timeElapsed % enemy.checkInterval != 0)
-            {
-                continue;
-            }
-            if(enemy.currentOdds >= 100)
-            {
-                // trigger attack dialog
-                enemy.currentOdds = 0;
-                break;
-            }
-            else
-            {
-                enemy.currentOdds += enemy.oddsStep[enemy.currentOddsIndex];
-            }
+            return;
+        }
+        
+        lastCheck = DateTime.Now;
+        if(enemy.currentOdds >= 100)
+        {
+            gameController.StartFight();
+            enemy.currentOdds = 0;
+            enemy.IncrementOddsIndex();
+        }
+        else
+        {
+            enemy.IncrementOdds();
         }
     }
 
     public void ResetEncounterChances()
     {
-        foreach(EnemyConfig enemy in availableEnemies)
-        {
-            enemy.currentOddsIndex = 0;
-            enemy.currentOdds = 0;
-        }
+        enemy.currentOddsIndex = 0;
+        enemy.currentOdds = 0;
+        lastCheck = DateTime.Now;
     }
 }

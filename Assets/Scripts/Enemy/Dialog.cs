@@ -11,12 +11,19 @@ public class Dialog : MonoBehaviour
     public Button[] buttons;
     public bool useQuestionPrompt = true;
 
-    void Start()
+    public GameController gameController;
+    public GameObject dialogUI;
+    public GameObject mainUI;
+
+    public void StartDialog()
     {
         ChooseRiddles();
+        mainUI.SetActive(false);
+        dialogUI.SetActive(true);
+        Debug.Log("This should be visible rn");
     }
 
-    public void ChooseRiddles()
+    private void ChooseRiddles()
     {
         Shuffle<Riddle>(availableRiddles);
         Shuffle<Button>(buttons);
@@ -43,7 +50,7 @@ public class Dialog : MonoBehaviour
         }
     }
 
-    public static void Shuffle<T>(T[] array)
+    private static void Shuffle<T>(T[] array)
     {
         T temp;
         for (int i = 0; i < array.Length - 1; i++) 
@@ -57,6 +64,8 @@ public class Dialog : MonoBehaviour
 
     public void ChooseOption(bool isCorrect)
     {
-        Debug.Log(isCorrect);
+        dialogUI.SetActive(false);
+        mainUI.SetActive(true);
+        gameController.WinFight(isCorrect);
     }
 }
