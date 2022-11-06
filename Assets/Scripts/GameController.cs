@@ -12,7 +12,8 @@ public class GameController : MonoBehaviour
     public Dialog dialog;
     public EncounterController encounterController;
 
-    public GameObject endOfDayGO;
+    public GameObject endOfDayUI;
+    public GameObject lossUI;
 
     private int currentDay = 0;
     private bool dayHasStarted = true;
@@ -53,7 +54,8 @@ public class GameController : MonoBehaviour
     {
         if(!win)
         {
-            // consequences of loss
+            lossUI.SetActive(true);
+            return;
         }
 
         dayCycle.TogglePauseDay(false);
@@ -62,7 +64,7 @@ public class GameController : MonoBehaviour
 
     public void EndDay()
     {
-        endOfDayGO.SetActive(true);
+        endOfDayUI.SetActive(true);
         dayHasStarted = false;
     }
 
@@ -71,7 +73,9 @@ public class GameController : MonoBehaviour
         currentDay++;
         inventory.Reset();
         taskList.UpdateTasks();
-        endOfDayGO.SetActive(false);
+        endOfDayUI.SetActive(false);
+        lossUI.SetActive(false);
+        isFighting = false;
         dayHasStarted = true;
         dayCycle.StartDay();
         encounterController.ResetEncounterChances();
