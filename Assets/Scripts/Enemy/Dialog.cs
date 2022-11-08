@@ -20,7 +20,6 @@ public class Dialog : MonoBehaviour
         ChooseRiddles();
         mainUI.SetActive(false);
         dialogUI.SetActive(true);
-        Debug.Log("This should be visible rn");
     }
 
     private void ChooseRiddles()

@@ -4,20 +4,26 @@ using UnityEngine;
 
 public class TaskList : MonoBehaviour
 {
-    public Task[] availableTasks = null;
-    // Check how to rename the X and Y later
+    [System.Serializable]
+    public struct TaskListCategory
+    {
+        [SerializeField]
+        public Task[] tasks;
+    }
+
+    public TaskListCategory[] availableTasks = null;
+    //TODO: Check how to rename the X and Y later
     public Vector2Int taskAmountLimits = Vector2Int.up;
     public TaskListItem[] tasks;
 
     public void UpdateTasks()
     {
-        //TODO: define tasks by level or choose randomly? maybe both??
         ChooseTasks();
     }
 
     public void ChooseTasks()
     {                         
-        ShuffleTasks(availableTasks);
+        ShuffleTasks<TaskListCategory>(availableTasks);
 
         taskAmountLimits.x = Mathf.Max(1, taskAmountLimits.x);
         taskAmountLimits.y = Mathf.Min(tasks.Length, taskAmountLimits.y);
@@ -27,7 +33,9 @@ public class TaskList : MonoBehaviour
         {
             if(i < taskAmount)
             {
-                tasks[i].UpdateTask(availableTasks[i]);
+                Task task = availableTasks[i].tasks[Random.Range(0, availableTasks[i].tasks.Length)];
+                task.completed = false;
+                tasks[i].UpdateTask(task);
             }
             else
             {
@@ -36,9 +44,9 @@ public class TaskList : MonoBehaviour
         }
     }
 
-    public void ShuffleTasks(Task[] values)
+    public void ShuffleTasks<T>(T[] values)
     {
-        Task tempValue;
+        T tempValue;
         for (int i = 0; i < values.Length - 1; i++) 
         {
             int rnd = Random.Range(i, values.Length);
