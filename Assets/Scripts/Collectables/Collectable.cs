@@ -6,17 +6,23 @@ public class Collectable : MonoBehaviour
 {
     public Inventory inventory;
     public Item item;
-    private bool canCollect = false;
-
+    public AudioSource collectAudio;
     public Animator playerAnimator;
+
+    private bool canCollect = false;
 
     void Update()
     {
         if(canCollect && Input.GetKeyUp(KeyCode.E) && !playerAnimator.GetBool("IsWalking"))
         {
             inventory.CollectItem(item);
-            Destroy(gameObject);
+            collectAudio.Play();
             playerAnimator.SetTrigger("GrabItem");
+        }
+
+        if(collectAudio.time >= collectAudio.clip.length)
+        {
+            Destroy(gameObject);
         }
     }
 
