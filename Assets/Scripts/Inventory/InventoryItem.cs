@@ -7,18 +7,19 @@ public class InventoryItem : MonoBehaviour
 {
     public Item item;
     public Image image;
-    public Text text;
+    public Text amount;
+    public Text itemName;
 
     public void Add()
     {
         if(item.amount == 0)
         {
             image.color = new Color(1, 1, 1, 1);
-            text.text = "";
-            text.gameObject.SetActive(true);
+            amount.text = "";
+            amount.gameObject.SetActive(true);
         }
         item.amount++;
-        text.text = item.amount.ToString();
+        amount.text = item.amount.ToString();
     }
 
     public void Remove()
@@ -30,10 +31,10 @@ public class InventoryItem : MonoBehaviour
         else if(item.amount == 1)
         {
             image.color = new Color(1, 1, 1, 0.5f);
-            text.gameObject.SetActive(false);
+            amount.gameObject.SetActive(false);
         }
         item.amount--;
-        text.text = item.amount.ToString();
+        amount.text = item.amount.ToString();
     }
 
     public void Reset()
@@ -44,6 +45,7 @@ public class InventoryItem : MonoBehaviour
             image.sprite = item.icon;
             image.color = new Color(1, 1, 1, 0.5f);
         }
-        text.gameObject.SetActive(false);
+        amount.gameObject.SetActive(false);
+        itemName.text = item.itemName;
     }
 }

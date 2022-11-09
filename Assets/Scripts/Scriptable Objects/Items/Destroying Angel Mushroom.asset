@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e29f705c3e75734a9333a217d9758e0, type: 3}
   m_Name: Destroying Angel Mushroom
   m_EditorClassIdentifier: 
-  itemName: Destroying Angel Mushroom
+  itemName: Destroying Angel
   amount: 0
-  icon: {fileID: 21300000, guid: 7f3c7523db577c94595cd9777f126cfc, type: 3}
+  icon: {fileID: 21300000, guid: 8d28c1145f0430c418cf47c8bc8af28d, type: 3}

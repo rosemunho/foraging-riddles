@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e29f705c3e75734a9333a217d9758e0, type: 3}
   m_Name: Death Cap Mushroom
   m_EditorClassIdentifier: 
-  itemName: Death Cap Mushroom
+  itemName: Death Cap
   amount: 0
-  icon: {fileID: 21300000, guid: 7f3c7523db577c94595cd9777f126cfc, type: 3}
+  icon: {fileID: 21300000, guid: ee851bb3660f2564881ab2feac380eec, type: 3}
