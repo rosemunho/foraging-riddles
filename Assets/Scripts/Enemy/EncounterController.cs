@@ -7,6 +7,7 @@ public class EncounterController : MonoBehaviour
 {
     public EnemyConfig enemy;
     public GameController gameController;
+    public AudioSource encounterAudio;
 
     private DateTime lastCheck;
 
@@ -25,6 +26,7 @@ public class EncounterController : MonoBehaviour
             gameController.StartFight();
             enemy.currentOdds = 0;
             enemy.IncrementOddsIndex();
+            encounterAudio.Play();
         }
         else
         {
