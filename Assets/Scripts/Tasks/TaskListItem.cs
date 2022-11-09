@@ -26,7 +26,7 @@ public class TaskListItem : MonoBehaviour
         if(task != null)
         {
             task.CheckComplete();
-            image.SetActive(task.completed);
+            //image.SetActive(task.completed);
         }
     }
 

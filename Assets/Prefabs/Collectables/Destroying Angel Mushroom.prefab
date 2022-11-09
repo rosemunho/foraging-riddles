@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 995757404422573984}
   - component: {fileID: 746222496238266445}
+  - component: {fileID: 6885712665416664473}
   m_Layer: 0
   m_Name: Destroying Angel Mushroom
   m_TagString: Untagged
@@ -41,12 +42,27 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 475821052847641882}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.3
   m_Height: 0.3
   m_Direction: 1
   m_Center: {x: 1.7, y: 0.13, z: 0.05}
+--- !u!114 &6885712665416664473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 475821052847641882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92756cebff58319409349eaa85b11c44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventory: {fileID: 0}
+  item: {fileID: 11400000, guid: a737c6a2ed1489c43829624b3628f687, type: 2}
+  playerAnimator: {fileID: 0}
 --- !u!1 &507263027880085868
 GameObject:
   m_ObjectHideFlags: 0

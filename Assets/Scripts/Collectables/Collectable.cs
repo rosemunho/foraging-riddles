@@ -8,12 +8,11 @@ public class Collectable : MonoBehaviour
     public Item item;
     private bool canCollect = false;
 
-    //TODO: remove from here, you know the drill
     public Animator playerAnimator;
 
     void Update()
     {
-        if(canCollect && Input.GetMouseButtonUp(0) && !playerAnimator.GetBool("IsWalking"))
+        if(canCollect && Input.GetKeyUp(KeyCode.E) && !playerAnimator.GetBool("IsWalking"))
         {
             inventory.CollectItem(item);
             Destroy(gameObject);

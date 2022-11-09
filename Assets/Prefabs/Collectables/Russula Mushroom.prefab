@@ -188,6 +188,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3453431886634790886}
   - component: {fileID: 2911497433838176271}
+  - component: {fileID: 4212718880839483682}
   m_Layer: 0
   m_Name: Russula Mushroom
   m_TagString: Untagged
@@ -219,12 +220,27 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2641043063433065820}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.25
   m_Height: 0.25
   m_Direction: 1
   m_Center: {x: 0.2, y: 0.15, z: 0.02}
+--- !u!114 &4212718880839483682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2641043063433065820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92756cebff58319409349eaa85b11c44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventory: {fileID: 0}
+  item: {fileID: 11400000, guid: 725081ae48ecf2948aa74b8356afc7f8, type: 2}
+  playerAnimator: {fileID: 0}
 --- !u!1 &3411768112392701654
 GameObject:
   m_ObjectHideFlags: 0

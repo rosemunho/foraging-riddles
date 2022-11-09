@@ -14,6 +14,7 @@ public class GameController : MonoBehaviour
     public EncounterController encounterController;
 
     public GameObject mainUI;
+    public Text dayLabel;
     public GameObject endOfDayUI;
     public Text tasksCounter;
     public GameObject loseRiddleUI;
@@ -89,6 +90,7 @@ public class GameController : MonoBehaviour
     public void NextDay()
     {
         currentDay++;
+        dayLabel.text = "Day " + (currentDay < 10 ? "0" : "") + currentDay.ToString();
         inventory.Reset();
         taskList.UpdateTasks();
         endOfDayUI.SetActive(false);
