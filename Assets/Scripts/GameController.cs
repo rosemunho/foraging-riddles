@@ -13,6 +13,7 @@ public class GameController : MonoBehaviour
     public Dialog dialog;
     public EncounterController encounterController;
 
+    public GameObject mainUI;
     public GameObject endOfDayUI;
     public Text tasksCounter;
     public GameObject loseRiddleUI;
@@ -62,6 +63,7 @@ public class GameController : MonoBehaviour
 
     public void EndDay()
     {
+        mainUI.SetActive(false);
         endOfDayUI.SetActive(true);
         dayHasStarted = false;
         tasksCounter.text = taskList.GetCompletedTasks().ToString() + " / " + taskList.GetTotalTasks().ToString() + " Tasks Completed";
@@ -90,6 +92,7 @@ public class GameController : MonoBehaviour
         inventory.Reset();
         taskList.UpdateTasks();
         endOfDayUI.SetActive(false);
+        mainUI.SetActive(true);
         isFighting = false;
         dayHasStarted = true;
         dayCycle.StartDay();
