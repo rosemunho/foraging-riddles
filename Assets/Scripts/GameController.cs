@@ -14,6 +14,7 @@ public class GameController : MonoBehaviour
 
     public GameObject endOfDayUI;
     public GameObject lossUI;
+    public GameObject winUI;
 
     private int currentDay = 0;
     private bool dayHasStarted = true;
@@ -21,6 +22,7 @@ public class GameController : MonoBehaviour
 
     void Start()
     {
+        currentDay = 0;
         NextDay();
     }
 
@@ -38,7 +40,7 @@ public class GameController : MonoBehaviour
             }
             else
             {
-                SceneManager.LoadScene("Menu");
+                EndGame(true);
             }
         }
     }
@@ -57,7 +59,12 @@ public class GameController : MonoBehaviour
             lossUI.SetActive(true);
             return;
         }
+        
+        winUI.SetActive(true);
+    }
 
+    public void ContinueDay()
+    {
         dayCycle.TogglePauseDay(false);
         isFighting = false;
     }
@@ -66,6 +73,7 @@ public class GameController : MonoBehaviour
     {
         endOfDayUI.SetActive(true);
         dayHasStarted = false;
+        // check tasks
     }
 
     public void NextDay()
@@ -79,5 +87,10 @@ public class GameController : MonoBehaviour
         dayHasStarted = true;
         dayCycle.StartDay();
         encounterController.ResetEncounterChances();
+    }
+
+    public void EndGame(bool success)
+    {
+        SceneManager.LoadScene("Menu");
     }
 }
