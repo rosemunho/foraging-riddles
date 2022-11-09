@@ -17824,7 +17824,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb60841b78005be49921dbcf84aaeae2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amountOfDays: 2
+  amountOfDays: 10
   dayCycle: {fileID: 697467352}
   inventory: {fileID: 1291127637}
   taskList: {fileID: 672276402}

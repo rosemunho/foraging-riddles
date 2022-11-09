@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ba26c0b1af33a542ba6627fa39943d8, type: 3}
   m_Name: Wolf
   m_EditorClassIdentifier: 
-  oddsStep: 0f000000140000001e000000
+  oddsStep: 140000001e00000028000000
   currentOddsIndex: 0
   checkInterval: 30
-  currentOdds: 75
+  currentOdds: 13
