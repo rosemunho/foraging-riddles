@@ -44,7 +44,8 @@ public class DayCycle : MonoBehaviour
         }
         else
         {
-            float elapsedPauseTime = (currentTime.Hour*360 + currentTime.Minute*60 + currentTime.Second) - (pauseStarted.Hour*360 + pauseStarted.Minute*60 + pauseStarted.Second);
+            float elapsedPauseTime = (currentTime.Hour*360 + currentTime.Minute*60 + currentTime.Second) -
+                    (pauseStarted.Hour*360 + pauseStarted.Minute*60 + pauseStarted.Second);
             previousPauseDuration += elapsedPauseTime;
         }
     }
@@ -52,16 +53,13 @@ public class DayCycle : MonoBehaviour
     void Update()
     {
         currentTime = DateTime.Now;
-        if(dayHasStarted && !isPaused && !(currentTime.Hour == lastUpdate.Hour && currentTime.Minute == lastUpdate.Minute && currentTime.Second == lastUpdate.Second))
+        if(dayHasStarted && !isPaused &&
+            !(currentTime.Hour == lastUpdate.Hour && currentTime.Minute == lastUpdate.Minute && currentTime.Second == lastUpdate.Second))
         {
             lastUpdate = currentTime;
-            elapsedTime = (currentTime.Hour*360 + currentTime.Minute*60 + currentTime.Second) - (timeStarted.Hour*360 + timeStarted.Minute*60 + timeStarted.Second) - previousPauseDuration;
+            elapsedTime = (currentTime.Hour*360 + currentTime.Minute*60 + currentTime.Second) -
+                	(timeStarted.Hour*360 + timeStarted.Minute*60 + timeStarted.Second) - previousPauseDuration;
             UpdateClock();
-        }
-        
-        if(Input.GetMouseButtonUp(1))
-        {
-            TogglePauseDay(!isPaused);
         }
     }
 

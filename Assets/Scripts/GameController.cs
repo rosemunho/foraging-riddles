@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
@@ -13,8 +14,9 @@ public class GameController : MonoBehaviour
     public EncounterController encounterController;
 
     public GameObject endOfDayUI;
-    public GameObject lossUI;
-    public GameObject winUI;
+    public Text tasksCounter;
+    public GameObject loseRiddleUI;
+    public GameObject winRiddleUI;
 
     private int currentDay = 0;
     private bool dayHasStarted = true;
@@ -32,17 +34,6 @@ public class GameController : MonoBehaviour
         {
             encounterController.CheckForEncounter((int)dayCycle.elapsedTime);
         }
-        else if(!dayHasStarted && Input.GetMouseButtonUp(0))
-        {
-            if(currentDay < amountOfDays)
-            {
-                NextDay();
-            }
-            else
-            {
-                EndGame(true);
-            }
-        }
     }
 
     public void StartFight()
@@ -56,11 +47,11 @@ public class GameController : MonoBehaviour
     {
         if(!win)
         {
-            lossUI.SetActive(true);
+            loseRiddleUI.SetActive(true);
             return;
         }
         
-        winUI.SetActive(true);
+        winRiddleUI.SetActive(true);
     }
 
     public void ContinueDay()
@@ -73,7 +64,24 @@ public class GameController : MonoBehaviour
     {
         endOfDayUI.SetActive(true);
         dayHasStarted = false;
-        // check tasks
+        tasksCounter.text = taskList.GetCompletedTasks().ToString() + " / " + taskList.GetTotalTasks().ToString() + " Tasks Completed";
+    }
+
+    public void CheckForLoss()
+    {
+        if(taskList.GetCompletedTasks()/taskList.GetTotalTasks() == 1)
+        {
+            EndGame(false);
+            return;
+        }
+
+        if(currentDay < amountOfDays)
+        {
+            NextDay();
+            return;
+        }
+        
+        EndGame(true);
     }
 
     public void NextDay()
@@ -82,7 +90,6 @@ public class GameController : MonoBehaviour
         inventory.Reset();
         taskList.UpdateTasks();
         endOfDayUI.SetActive(false);
-        lossUI.SetActive(false);
         isFighting = false;
         dayHasStarted = true;
         dayCycle.StartDay();
