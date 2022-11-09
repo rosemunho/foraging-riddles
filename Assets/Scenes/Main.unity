@@ -744,7 +744,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   amounts: {x: 10, y: 15}
   parent: {fileID: 172105322}
-  collectablePrefab: {fileID: 919132148621822354}
+  collectablePrefab: {fileID: 6755398277276231771}
   areaLength: 6.5
 --- !u!23 &16725470
 MeshRenderer:
@@ -5257,7 +5257,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   amounts: {x: 3, y: 5}
   parent: {fileID: 172105322}
-  collectablePrefab: {fileID: 919132148621822354}
+  collectablePrefab: {fileID: 6755398277276231771}
   areaLength: 3
 --- !u!23 &175358522
 MeshRenderer:
@@ -17254,7 +17254,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   amounts: {x: 10, y: 15}
   parent: {fileID: 172105322}
-  collectablePrefab: {fileID: 919132148621822354}
+  collectablePrefab: {fileID: 6755398277276231771}
   areaLength: 6.5
 --- !u!23 &555406841
 MeshRenderer:
@@ -25236,7 +25236,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   amounts: {x: 10, y: 15}
   parent: {fileID: 172105322}
-  collectablePrefab: {fileID: 919132148621822354}
+  collectablePrefab: {fileID: 6755398277276231771}
   areaLength: 3
 --- !u!23 &813263642
 MeshRenderer:
@@ -26507,7 +26507,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   amounts: {x: 3, y: 5}
   parent: {fileID: 172105322}
-  collectablePrefab: {fileID: 919132148621822354}
+  collectablePrefab: {fileID: 6755398277276231771}
   areaLength: 3
 --- !u!23 &862649278
 MeshRenderer:
@@ -39345,7 +39345,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   amounts: {x: 15, y: 25}
   parent: {fileID: 172105322}
-  collectablePrefab: {fileID: 919132148621822354}
+  collectablePrefab: {fileID: 6755398277276231771}
   areaLength: 6
 --- !u!23 &1200269655
 MeshRenderer:
@@ -41311,7 +41311,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   amounts: {x: 3, y: 5}
   parent: {fileID: 172105322}
-  collectablePrefab: {fileID: 919132148621822354}
+  collectablePrefab: {fileID: 6755398277276231771}
   areaLength: 3
 --- !u!23 &1272167439
 MeshRenderer:
@@ -45939,7 +45939,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   amounts: {x: 5, y: 10}
   parent: {fileID: 172105322}
-  collectablePrefab: {fileID: 919132148621822354}
+  collectablePrefab: {fileID: 6755398277276231771}
   areaLength: 3
 --- !u!23 &1414075384
 MeshRenderer:
@@ -58042,7 +58042,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   amounts: {x: 5, y: 10}
   parent: {fileID: 172105322}
-  collectablePrefab: {fileID: 919132148621822354}
+  collectablePrefab: {fileID: 6755398277276231771}
   areaLength: 5
 --- !u!23 &1856590237
 MeshRenderer:
@@ -67359,84 +67359,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ddc628fd940e51043a0d90e360eae985, type: 3}
   m_PrefabInstance: {fileID: 2140661852}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &746222496773840008
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 475821052847641882, guid: 3eaa5e6b217d99948906aa2de737da6a, type: 3}
-      propertyPath: m_Name
-      value: Destroying Angel Mushroom
-      objectReference: {fileID: 0}
-    - target: {fileID: 475821052847641882, guid: 3eaa5e6b217d99948906aa2de737da6a, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 746222496238266445, guid: 3eaa5e6b217d99948906aa2de737da6a, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 995757404422573984, guid: 3eaa5e6b217d99948906aa2de737da6a, type: 3}
-      propertyPath: m_RootOrder
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 995757404422573984, guid: 3eaa5e6b217d99948906aa2de737da6a, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 995757404422573984, guid: 3eaa5e6b217d99948906aa2de737da6a, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.13
-      objectReference: {fileID: 0}
-    - target: {fileID: 995757404422573984, guid: 3eaa5e6b217d99948906aa2de737da6a, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 995757404422573984, guid: 3eaa5e6b217d99948906aa2de737da6a, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 995757404422573984, guid: 3eaa5e6b217d99948906aa2de737da6a, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 995757404422573984, guid: 3eaa5e6b217d99948906aa2de737da6a, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 995757404422573984, guid: 3eaa5e6b217d99948906aa2de737da6a, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 995757404422573984, guid: 3eaa5e6b217d99948906aa2de737da6a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 995757404422573984, guid: 3eaa5e6b217d99948906aa2de737da6a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 995757404422573984, guid: 3eaa5e6b217d99948906aa2de737da6a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6885712665416664473, guid: 3eaa5e6b217d99948906aa2de737da6a, type: 3}
-      propertyPath: inventory
-      value: 
-      objectReference: {fileID: 1291127637}
-    - target: {fileID: 6885712665416664473, guid: 3eaa5e6b217d99948906aa2de737da6a, type: 3}
-      propertyPath: playerAnimator
-      value: 
-      objectReference: {fileID: 6730009325169236082}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 3eaa5e6b217d99948906aa2de737da6a, type: 3}
---- !u!1 &919132148621822354 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 475821052847641882, guid: 3eaa5e6b217d99948906aa2de737da6a, type: 3}
-  m_PrefabInstance: {fileID: 746222496773840008}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &919132149029659574 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8594406543803182020, guid: d3b65129b37faa54fbb5d27b83b12413, type: 3}
@@ -67625,6 +67547,75 @@ PrefabInstance:
       objectReference: {fileID: 6730009325169236082}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2ac114c1578622408a2c0895d4f1386, type: 3}
+--- !u!1001 &5025316372854027914
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1389831901527573611, guid: 3eaa5e6b217d99948906aa2de737da6a, type: 3}
+      propertyPath: m_RootOrder
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1389831901527573611, guid: 3eaa5e6b217d99948906aa2de737da6a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1389831901527573611, guid: 3eaa5e6b217d99948906aa2de737da6a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1389831901527573611, guid: 3eaa5e6b217d99948906aa2de737da6a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1389831901527573611, guid: 3eaa5e6b217d99948906aa2de737da6a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1389831901527573611, guid: 3eaa5e6b217d99948906aa2de737da6a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1389831901527573611, guid: 3eaa5e6b217d99948906aa2de737da6a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1389831901527573611, guid: 3eaa5e6b217d99948906aa2de737da6a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1389831901527573611, guid: 3eaa5e6b217d99948906aa2de737da6a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1389831901527573611, guid: 3eaa5e6b217d99948906aa2de737da6a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1389831901527573611, guid: 3eaa5e6b217d99948906aa2de737da6a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1730082013093748433, guid: 3eaa5e6b217d99948906aa2de737da6a, type: 3}
+      propertyPath: m_Name
+      value: Destroying Angel Mushroom
+      objectReference: {fileID: 0}
+    - target: {fileID: 1730082013093748433, guid: 3eaa5e6b217d99948906aa2de737da6a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5173922273956459481, guid: 3eaa5e6b217d99948906aa2de737da6a, type: 3}
+      propertyPath: inventory
+      value: 
+      objectReference: {fileID: 1291127637}
+    - target: {fileID: 5173922273956459481, guid: 3eaa5e6b217d99948906aa2de737da6a, type: 3}
+      propertyPath: playerAnimator
+      value: 
+      objectReference: {fileID: 6730009325169236082}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3eaa5e6b217d99948906aa2de737da6a, type: 3}
 --- !u!1001 &6452525099964097548
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -67726,6 +67717,11 @@ Animator:
 Transform:
   m_CorrespondingSourceObject: {fileID: 3486285955281589242, guid: 76d5dec765a5a7743b543680f98a1c6f, type: 3}
   m_PrefabInstance: {fileID: 7372355088742420782}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6755398277276231771 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1730082013093748433, guid: 3eaa5e6b217d99948906aa2de737da6a, type: 3}
+  m_PrefabInstance: {fileID: 5025316372854027914}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7372355088742420782
 PrefabInstance:
